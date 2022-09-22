@@ -28,6 +28,21 @@ function setCookie(cname, cvalue, exdays) { //fonsiyonun parametreleri, çerezin
   setCookie("name", "Yasemin",  15);  //Cookie Değerinin değiştirilmesi. name değişkenine Yagmur Baran yerine Yasemin yazıldı.
   setCookie("name", "Yasemin", -1); //Var olan Cookie Değerini silinmesi.
  
+  //A Function to Check a Cookie
+
+function checkCookie() {
+  let username = getCookie("username");
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+}
+//Çerez ayarlanmışsa, bir karşılama mesajı görüntüler. Tanımlama bilgisi ayarlanmazsa, kullanıcının adını soran bir bilgi istemi kutusu görüntüler 
+ve setCookie işlevini çağırarak kullanıcı adı tanımlama bilgisini 365 gün boyunca saklar
  
  //****************************************************************************************************************************************************************
  //Session Storage
